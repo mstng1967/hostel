@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Reservations</title>
+  </head>
+  <body>
+    <li>{{reservation.guest}}</li>
+    <h1>HUGO</h1>
+    <form method='POST'>
+    {% csrf_token %}
+      <label for='guest_name'>Guest Name</label><br />
+      <input type="text" name="guest_name" id="guest_name" />
+      <br>
+      <label for="entry_date">Entry Date</label><br />
+      <input type="date"name="entry_date" id="entry_date" />
+      <br><br>
+      <label for="leave_date">Leave Date</label><br />
+      <input type="date" name="leave_date" id="leave_date" />
+      <br><br>
+      <label for="group_size">Group Size</label><br />
+      <input type="number" name="group_size" min="1" max="6" id="group_size" />
+      <br><br>
+      <input type="submit" value="Submit" />
+    </form>
+
+
+  </body>
+</html>
